@@ -18,6 +18,12 @@ const GuardianEngine = {
         let alerts = { privacy: 0, trust: 0 };
         let analyzedText = text;
 
+        // Integrity Check: Ensure PATTERNS hasn't been corrupted
+        if (!this.checkIntegrity()) {
+            console.error("🚨 Guardian Engine Integrity Compromised!");
+            return { analyzedText, alerts, integrity_fail: true };
+        }
+
         // Privacy Check
         for (const [type, regex] of Object.entries(this.PATTERNS.PRIVACY)) {
             const matches = text.match(regex);
@@ -28,22 +34,30 @@ const GuardianEngine = {
         }
 
         // Trust Check
-        for (const [type, regex] of Object.entries(this.PATTERNS.TRUST)) {
-            const matches = text.match(regex);
-            if (matches) {
-                alerts.trust += matches.length;
+        for (const [category, patterns] of Object.entries(this.PATTERNS)) {
+            if (category === 'PRIVACY') continue; // Handled above
+            for (const [type, regex] of Object.entries(patterns)) {
+                const matches = text.match(regex);
+                if (matches) {
+                    alerts.trust += matches.length;
+                }
             }
         }
 
         return { analyzedText, alerts };
     },
 
+    checkIntegrity() {
+        // In a full build, this would verify a checksum of the Engine's code
+        return true;
+    },
+
     getTrustScore(alerts) {
-        // Simple scoring algorithm: Start at 100, deduct points for alerts
         let score = 100 - (alerts.trust * 10) - (alerts.privacy * 5);
         return Math.max(0, score);
     }
 };
+
 
 if (typeof module !== 'undefined') {
     module.exports = GuardianEngine;

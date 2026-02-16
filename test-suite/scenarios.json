@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Clear PII Leak",
+        "text": "My email is test@example.com and my SSN is 123-45-6789.",
+        "expected": {
+            "privacy": 2,
+            "trust": 0
+        }
+    },
+    {
+        "name": "Manipulative Scam",
+        "text": "URGENT! Buy now to save your computer! Limited time offer.",
+        "expected": {
+            "privacy": 0,
+            "trust": 3
+        }
+    },
+    {
+        "name": "Mixed Threat",
+        "text": "Verify account immediately at support@scam.com. Act fast!",
+        "expected": {
+            "privacy": 1,
+            "trust": 2
+        }
+    },
+    {
+        "name": "Safe Content",
+        "text": "The weather today is sunny and the park is beautiful.",
+        "expected": {
+            "privacy": 0,
+            "trust": 0
+        }
+    },
+    {
+        "name": "AI Suspicion",
+        "text": "As an AI language model, I provide holistic solutions.",
+        "expected": {
+            "privacy": 0,
+            "trust": 2
+        }
+    },
+    {
+        "name": "Credit Card Leak",
+        "text": "Payment requested to card 1234 5678 1234 5678.",
+        "expected": {
+            "privacy": 1,
+            "trust": 0
+        }
+    }
+]
