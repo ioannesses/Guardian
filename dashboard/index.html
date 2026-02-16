@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuardianAI | Security & Compliance Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <div class="glow-bg"></div>
+
+    <nav>
+        <div class="logo">
+            <i data-lucide="shield-check"></i>
+            <span>GuardianAI</span>
+        </div>
+        <div class="nav-links">
+            <span class="status-pill active">System: Secure</span>
+            <i data-lucide="settings"></i>
+            <i data-lucide="bell"></i>
+        </div>
+    </nav>
+
+    <main>
+        <header>
+            <h1>Security Oversight</h1>
+            <p>Real-time AI interaction auditing and compliance monitoring.</p>
+        </header>
+
+        <section class="metrics">
+            <div class="card glass-card">
+                <div class="card-header">
+                    <i data-lucide="alert-triangle" class="icon-warning"></i>
+                    <span>Risk Score</span>
+                </div>
+                <div class="card-body">
+                    <div class="score">12<span>/100</span></div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 12%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card glass-card">
+                <div class="card-header">
+                    <i data-lucide="database"></i>
+                    <span>PII Detected</span>
+                </div>
+                <div class="card-body">
+                    <div class="stat">24<span> incidences</span></div>
+                    <p class="stat-detail">Last 24 hours</p>
+                </div>
+            </div>
+            <div class="card glass-card">
+                <div class="card-header">
+                    <i data-lucide="file-check" class="icon-success"></i>
+                    <span>SOC2 Compliance</span>
+                </div>
+                <div class="card-body">
+                    <div class="stat">98%</div>
+                    <p class="stat-detail">Audit Ready</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="feed">
+            <div class="card glass-card full-width">
+                <div class="card-header">
+                    <i data-lucide="activity"></i>
+                    <span>Recent Activity</span>
+                </div>
+                <table id="activity-table">
+                    <thead>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>Target</th>
+                            <th>Severity</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2026-02-15 23:25:01</td>
+                            <td>LLM-Proxy-01</td>
+                            <td><span class="badge badge-low">Low</span></td>
+                            <td><span class="badge badge-redacted">Redacted</span></td>
+                        </tr>
+                        <tr>
+                            <td>2026-02-15 23:20:45</td>
+                            <td>CLI-Scanner</td>
+                            <td><span class="badge badge-med">Medium</span></td>
+                            <td><span class="badge badge-flagged">Flagged</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
