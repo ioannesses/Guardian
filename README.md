@@ -41,8 +41,13 @@ GuardianAI follows a tiered SaaS model:
 - **Pro ($49/mo)**: Hosted dashboard + CI/CD integration.
 - **Enterprise (Custom)**: Real-time Gateway + SOC2 Evidence Generation + Dedicated Support.
 
+## 📖 Strategy & Documentation
+
+- **[Business Model & Monetization](docs/business_model.md)**: Our billion-dollar strategy and revenue roadmap.
+- **[Ethics & Cybersecurity Charter](docs/ethics_charter.md)**: Our commitment to responsible and secure AI.
+
 ## ⚖️ Ethics & Cybersecurity
-We adhere to the highest ethical and cybersecurity standards. See our [Ethics Charter](ethics_charter.md) for more details.
+We adhere to the highest ethical and cybersecurity standards. See our [Ethics Charter](docs/ethics_charter.md) for more details.
 
 ## 📄 License
 This project is licensed under the MIT License.
