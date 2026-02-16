@@ -1,53 +1,40 @@
 # GuardianAI 🛡️
 
-**Automated Compliance & Security for the AI Era.**
+**The Global Trust Protocol: Protecting Humanity's Digital Future.**
 
-GuardianAI is a high-ROI enterprise solution designed to bridge the gap between rapid AI adoption and rigorous security/compliance standards (GDPR, SOC2, HIPAA).
+GuardianAI is a decentralized "Digital Immune System" designed to protect truth and privacy in the AI era. We believe that digital safety is a human right, and our mission is to provide every individual and family with a shield against digital manipulation and privacy erosion.
 
-## 🚀 Key Features
+## 🌍 Our Mission
+To build a safer, more transparent digital world where truth and privacy are the default. We achieve this through:
+- **Truth Verification**: Detecting deepfakes and AI-generated misinformation in real-time.
+- **Privacy Protection**: Redacting PII locally before it ever leaves your device.
+- **Ethical Intelligence**: flagging manipulative and predatory AI language.
 
-- **Guardian CLI Scanner**: Audit your local codebases and datasets for PII (SSN, Emails, IPs) and Secrets (API Keys, Private Keys) before they reach the cloud.
-- **Guardian Gateway Proxy**: A real-time middleware that redacts sensitive information from outgoing LLM requests, ensuring zero data leakage.
-- **Premium Security Dashboard**: A high-fidelity, glassmorphism-inspired UI for CIOs and CISOs to monitor risk scores and compliance status in real-time.
-- **Compliance Automation**: Automatically generates evidence for SOC2 and GDPR audits based on AI interaction logs.
+## 🚀 Key Components
+
+- **[Guardian Browser Extension](extension/)**: Your personal digital shield. Local-first threat detection for every page you visit.
+- **[Guardian Ethical Filter](guardian-proxy.js)**: A real-time interceptor for privacy and trust in transit.
+- **[Safe-Guarded Dashboard](dashboard/)**: Visualize your digital protection score and intercepted threats.
 
 ## 🛠️ Tech Stack
+- **Engine**: Node.js & Vanilla JS (Deterministic detection engines)
+- **Environment**: Local-first architecture (Your data, your device)
+- **UI**: Premium Glassmorphism Design System
 
-- **Backend**: Node.js (Regex-based detection engines)
-- **Frontend**: HTML5, CSS3 (Glassmorphism), Vanilla JavaScript, Lucide Icons
-- **Security**: Zero-knowledge architecture, TLS 1.3, AES-256
+## 🤝 Join the Shield
+We are building this for humanity, and we need your help.
+- **Submit Patterns**: Found a new scam? [Contribute an ethical pattern](CONTRIBUTING.md).
+- **Audit the Code**: Transparency is the foundation of trust.
+- **Stay Ethical**: All contributors must adhere to our [Code of Conduct](CODE_OF_CONDUCT.md).
 
-## 📦 Getting Started
-
-### 1. Run the Scanner
-```bash
-node guardian-scanner.js <directory-to-scan>
-```
-This will generate a `guardian-report.json` file.
-
-### 2. Start the Proxy
-```bash
-node guardian-proxy.js
-```
-The proxy runs on `http://localhost:3001`. Send your LLM requests through it to automatically redact sensitive data.
-
-### 3. Open the Dashboard
-Simply open `dashboard/index.html` in your browser.
-
-## 💰 Monetization Strategy
-
-GuardianAI follows a tiered SaaS model:
-- **Community**: Free CLI scanner for individual developers.
-- **Pro ($49/mo)**: Hosted dashboard + CI/CD integration.
-- **Enterprise (Custom)**: Real-time Gateway + SOC2 Evidence Generation + Dedicated Support.
-
-## 📖 Strategy & Documentation
-
-- **[Business Model & Monetization](docs/business_model.md)**: Our billion-dollar strategy and revenue roadmap.
-- **[Ethics & Cybersecurity Charter](docs/ethics_charter.md)**: Our commitment to responsible and secure AI.
-
-## ⚖️ Ethics & Cybersecurity
-We adhere to the highest ethical and cybersecurity standards. See our [Ethics Charter](docs/ethics_charter.md) for more details.
+## 💰 Sustainability Model
+GuardianAI remains transparent and open for trust, but is protected from predatory commercialization.
+- **Open Core**: Free tools for individuals and families.
+- **Enterprise Protocol**: Paid licensing for platforms and corporations to ensure a safer internet for their users.
 
 ## 📄 License
-This project is licensed under the MIT License.
+This project is licensed under the **GuardianAI Source Available License**. It is open for transparency and non-commercial use, but commercial use requires an explicit license. See [LICENSE](LICENSE) for details.
+
+---
+**Truth Verified. Privacy Guaranteed. Built for Humanity.**
+

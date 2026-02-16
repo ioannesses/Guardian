@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            width: 300px;
+            padding: 1.5rem;
+            background: #0a0b10;
+            color: #f8fafc;
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .logo {
+            font-weight: 700;
+            background: linear-gradient(to right, #4f46e5, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .score-container {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .score-value {
+            font-size: 3.5rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .score-label {
+            font-size: 0.875rem;
+            opacity: 0.7;
+        }
+
+        .alerts {
+            margin-top: 1.5rem;
+        }
+
+        .alert-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.875rem;
+        }
+
+        .safe {
+            color: #22c55e;
+        }
+
+        .warning {
+            color: #eab308;
+        }
+
+        .danger {
+            color: #ef4444;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 1.5rem;
+            background: #4f46e5;
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <span class="logo">GuardianAI</span>
+        <span id="status" class="safe">● Active</span>
+    </div>
+    <div class="score-container">
+        <span class="score-label">TRUST SCORE</span>
+        <span id="score" class="score-value">--</span>
+        <span id="url" style="font-size: 0.75rem; opacity: 0.5;"></span>
+    </div>
+    <div class="alerts">
+        <div class="alert-item">
+            <span>Privacy Leaks Blocked</span>
+            <span id="privacy-count">0</span>
+        </div>
+        <div class="alert-item">
+            <span>Manipulative Patterns</span>
+            <span id="trust-count">0</span>
+        </div>
+    </div>
+    <button id="refresh">Re-Scan Page</button>
+    <footer style="margin-top: 1.5rem; font-size: 0.7rem; text-align: center; opacity: 0.4;">
+        Guardian Protocol v1.0.0 Beta
+    </footer>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>

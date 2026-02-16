@@ -4,108 +4,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GuardianAI | Security & Compliance Dashboard</title>
-    <link rel="stylesheet" href="style.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap"
-        rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>GuardianAI | Safe-Guarded Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0b10;
+            --glass: rgba(255, 255, 255, 0.05);
+            --primary: #4f46e5;
+            --secondary: #ec4899;
+            --text: #f8fafc;
+            --safe: #22c55e;
+            --warning: #eab308;
+            --danger: #ef4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        header {
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .status-badge {
+            background: rgba(34, 197, 94, 0.2);
+            color: var(--safe);
+            padding: 0.5rem 1rem;
+            border-radius: 99px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            border: 1px solid var(--safe);
+        }
+
+        main {
+            padding: 3rem 10%;
+            flex-grow: 1;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .score-display {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+
+        .safe-text {
+            color: var(--safe);
+        }
+
+        .danger-text {
+            color: var(--danger);
+        }
+
+        .warning-text {
+            color: var(--warning);
+        }
+
+        .logs {
+            margin-top: 3rem;
+            background: var(--glass);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .log-entry {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .log-entry:last-child {
+            border-bottom: none;
+        }
+
+        .tag {
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .tag.privacy {
+            background: rgba(79, 70, 229, 0.2);
+            color: #818cf8;
+        }
+
+        .tag.trust {
+            background: rgba(236, 72, 153, 0.2);
+            color: #f472b6;
+        }
+
+        footer {
+            padding: 2rem;
+            text-align: center;
+            opacity: 0.5;
+            font-size: 0.875rem;
+        }
+
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="glow-bg"></div>
-
-    <nav>
-        <div class="logo">
-            <i data-lucide="shield-check"></i>
-            <span>GuardianAI</span>
-        </div>
-        <div class="nav-links">
-            <span class="status-pill active">System: Secure</span>
-            <i data-lucide="settings"></i>
-            <i data-lucide="bell"></i>
-        </div>
-    </nav>
+    <header>
+        <div class="logo">GuardianAI</div>
+        <div class="status-badge">● System Shield Active</div>
+    </header>
 
     <main>
-        <header>
-            <h1>Security Oversight</h1>
-            <p>Real-time AI interaction auditing and compliance monitoring.</p>
-        </header>
+        <h1>Welcome back, <span class="primary-text">Global Protector</span></h1>
+        <p style="opacity: 0.7; margin-top: 0.5rem;">Real-time ethical monitoring for your digital ecosystem.</p>
 
-        <section class="metrics">
-            <div class="card glass-card">
-                <div class="card-header">
-                    <i data-lucide="alert-triangle" class="icon-warning"></i>
-                    <span>Risk Score</span>
-                </div>
-                <div class="card-body">
-                    <div class="score">12<span>/100</span></div>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 12%"></div>
+        <div class="grid">
+            <div class="card">
+                <h3>🛡️ Privacy Score</h3>
+                <div class="score-display safe-text">98%</div>
+                <p>3 PII leaks prevented in the last 24 hours.</p>
+            </div>
+            <div class="card">
+                <h3>⚖️ Ethical Alignment</h3>
+                <div class="score-display warning-text">84%</div>
+                <p>5 cases of manipulative AI language detected.</p>
+            </div>
+            <div class="card">
+                <h3>🌍 Humanity Impact</h3>
+                <div class="score-display safe-text">High</div>
+                <p>Protecting 1,248 vulnerable endpoints today.</p>
+            </div>
+        </div>
+
+        <div class="grid" id="investor-view" style="margin-top: 3rem;">
+            <div class="card" style="grid-column: 1 / -1;">
+                <h3>📈 Investor Insights: The Ethical Growth Moat</h3>
+                <div style="display: flex; gap: 2rem; align-items: center; justify-content: space-between;">
+                    <div>
+                        <p style="opacity: 0.7;">Projected Year 1 Impact</p>
+                        <div class="score-display safe-text" style="font-size: 2rem;">$1.2M Saved</div>
+                    </div>
+                    <div>
+                        <p style="opacity: 0.7;">TAM (AI Safety)</p>
+                        <div class="score-display primary-text" style="font-size: 2rem;">$10B+</div>
+                    </div>
+                    <div>
+                        <p style="opacity: 0.7;">Community Guardians</p>
+                        <div class="score-display secondary-text" style="font-size: 2rem;">4.2k active</div>
                     </div>
                 </div>
             </div>
-            <div class="card glass-card">
-                <div class="card-header">
-                    <i data-lucide="database"></i>
-                    <span>PII Detected</span>
-                </div>
-                <div class="card-body">
-                    <div class="stat">24<span> incidences</span></div>
-                    <p class="stat-detail">Last 24 hours</p>
-                </div>
-            </div>
-            <div class="card glass-card">
-                <div class="card-header">
-                    <i data-lucide="file-check" class="icon-success"></i>
-                    <span>SOC2 Compliance</span>
-                </div>
-                <div class="card-body">
-                    <div class="stat">98%</div>
-                    <p class="stat-detail">Audit Ready</p>
-                </div>
-            </div>
-        </section>
+        </div>
 
-        <section class="feed">
-            <div class="card glass-card full-width">
-                <div class="card-header">
-                    <i data-lucide="activity"></i>
-                    <span>Recent Activity</span>
+        <div class="logs">
+            <h3>🗃️ Recent Interceptions</h3>
+            <div id="log-container">
+                <div class="log-entry">
+                    <div>
+                        <strong>Email Masked</strong>
+                        <p style="font-size: 0.875rem; opacity: 0.6;">john.***@example.com</p>
+                    </div>
+                    <span class="tag privacy">PRIVACY</span>
                 </div>
-                <table id="activity-table">
-                    <thead>
-                        <tr>
-                            <th>Timestamp</th>
-                            <th>Target</th>
-                            <th>Severity</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>2026-02-15 23:25:01</td>
-                            <td>LLM-Proxy-01</td>
-                            <td><span class="badge badge-low">Low</span></td>
-                            <td><span class="badge badge-redacted">Redacted</span></td>
-                        </tr>
-                        <tr>
-                            <td>2026-02-15 23:20:45</td>
-                            <td>CLI-Scanner</td>
-                            <td><span class="badge badge-med">Medium</span></td>
-                            <td><span class="badge badge-flagged">Flagged</span></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="log-entry">
+                    <div>
+                        <strong>Scam Attempt Blocked</strong>
+                        <p style="font-size: 0.875rem; opacity: 0.6;">"URGENT! Buy now to save..."</p>
+                    </div>
+                    <span class="tag trust">TRUST</span>
+                </div>
+                <div class="log-entry">
+                    <div>
+                        <strong>AI Hallucination Flagged</strong>
+                        <p style="font-size: 0.875rem; opacity: 0.6;">"As an AI language model..."</p>
+                    </div>
+                    <span class="tag trust">TRUST</span>
+                </div>
             </div>
-        </section>
+        </div>
     </main>
 
-    <script src="app.js"></script>
-    <script>
-        lucide.createIcons();
-    </script>
+    <footer>
+        &copy; 2026 GuardianAI Protocol - Built for Humanity.
+    </footer>
 </body>
 
 </html>
